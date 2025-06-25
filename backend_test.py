@@ -60,13 +60,31 @@ class JobPortalAPITest:
             f"{self.base_url}/api/signup",
             json=self.test_user
         )
-        self.assertEqual(response.status_code, 200)
+        if response.status_code != 200:
+            print(f"❌ Applicant signup failed: Expected status code 200, got {response.status_code}")
+            return False
+            
         data = response.json()
-        self.assertTrue("access_token" in data)
-        self.assertEqual(data["token_type"], "bearer")
-        self.assertEqual(data["user"]["name"], self.test_user["name"])
-        self.assertEqual(data["user"]["email"], self.test_user["email"])
-        self.assertEqual(data["user"]["user_type"], "applicant")
+        if "access_token" not in data:
+            print("❌ Applicant signup failed: 'access_token' missing from response")
+            return False
+            
+        if data["token_type"] != "bearer":
+            print(f"❌ Applicant signup failed: Expected token_type 'bearer', got '{data['token_type']}'")
+            return False
+            
+        if data["user"]["name"] != self.test_user["name"]:
+            print(f"❌ Applicant signup failed: Name mismatch")
+            return False
+            
+        if data["user"]["email"] != self.test_user["email"]:
+            print(f"❌ Applicant signup failed: Email mismatch")
+            return False
+            
+        if data["user"]["user_type"] != "applicant":
+            print(f"❌ Applicant signup failed: Expected user_type 'applicant', got '{data['user']['user_type']}'")
+            return False
+            
         print("✅ Applicant signup passed")
         return data["access_token"]
 
