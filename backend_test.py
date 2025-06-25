@@ -176,6 +176,10 @@ class JobPortalAPITest:
                 "password": self.test_user["password"]
             }
         )
+        if response.status_code != 200:
+            print(f"❌ Profile retrieval failed: Could not sign in to get token")
+            return False
+            
         token = response.json()["access_token"]
         
         # Now test profile endpoint
@@ -183,24 +187,53 @@ class JobPortalAPITest:
             f"{self.base_url}/api/profile",
             headers={"Authorization": f"Bearer {token}"}
         )
-        self.assertEqual(response.status_code, 200)
+        if response.status_code != 200:
+            print(f"❌ Profile retrieval failed: Expected status code 200, got {response.status_code}")
+            return False
+            
         data = response.json()
-        self.assertEqual(data["email"], self.test_user["email"])
-        self.assertEqual(data["name"], self.test_user["name"])
-        self.assertEqual(data["user_type"], "applicant")
+        if data["email"] != self.test_user["email"]:
+            print(f"❌ Profile retrieval failed: Email mismatch")
+            return False
+            
+        if data["name"] != self.test_user["name"]:
+            print(f"❌ Profile retrieval failed: Name mismatch")
+            return False
+            
+        if data["user_type"] != "applicant":
+            print(f"❌ Profile retrieval failed: Expected user_type 'applicant', got '{data['user_type']}'")
+            return False
+            
         print("✅ Profile retrieval passed")
+        return True
 
     def test_07_stats(self):
         """Test platform statistics"""
         print("\n🔍 Testing platform statistics...")
         response = requests.get(f"{self.base_url}/api/stats")
-        self.assertEqual(response.status_code, 200)
+        if response.status_code != 200:
+            print(f"❌ Platform statistics failed: Expected status code 200, got {response.status_code}")
+            return False
+            
         data = response.json()
-        self.assertTrue("total_users" in data)
-        self.assertTrue("hirers" in data)
-        self.assertTrue("applicants" in data)
-        self.assertTrue("freelancers" in data)
+        if "total_users" not in data:
+            print("❌ Platform statistics failed: 'total_users' missing from response")
+            return False
+            
+        if "hirers" not in data:
+            print("❌ Platform statistics failed: 'hirers' missing from response")
+            return False
+            
+        if "applicants" not in data:
+            print("❌ Platform statistics failed: 'applicants' missing from response")
+            return False
+            
+        if "freelancers" not in data:
+            print("❌ Platform statistics failed: 'freelancers' missing from response")
+            return False
+            
         print("✅ Platform statistics passed")
+        return True
 
     def test_08_invalid_signup(self):
         """Test invalid signup with missing fields"""
