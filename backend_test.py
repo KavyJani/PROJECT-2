@@ -289,22 +289,42 @@ class JobPortalAPITest:
         print("\n🚀 Starting JobPortal API Tests...\n")
         
         try:
-            self.test_01_health_check()
+            # Run all tests
+            if not self.test_01_health_check():
+                return False
+                
             applicant_token = self.test_02_signup_applicant()
+            if not applicant_token:
+                return False
+                
             hirer_token = self.test_03_signup_hirer()
+            if not hirer_token:
+                return False
+                
             freelancer_token = self.test_04_signup_freelancer()
-            self.test_05_signin()
-            self.test_06_profile()
-            self.test_07_stats()
-            self.test_08_invalid_signup()
-            self.test_09_invalid_signin()
-            self.test_10_unauthorized_profile()
+            if not freelancer_token:
+                return False
+                
+            if not self.test_05_signin():
+                return False
+                
+            if not self.test_06_profile():
+                return False
+                
+            if not self.test_07_stats():
+                return False
+                
+            if not self.test_08_invalid_signup():
+                return False
+                
+            if not self.test_09_invalid_signin():
+                return False
+                
+            if not self.test_10_unauthorized_profile():
+                return False
             
             print("\n✅ All API tests completed successfully!")
             return True
-        except AssertionError as e:
-            print(f"\n❌ Test failed: {str(e)}")
-            return False
         except Exception as e:
             print(f"\n❌ Error during testing: {str(e)}")
             return False
