@@ -87,54 +87,54 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div id="app">
       {/* Navigation */}
-      <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">JobPortal</h1>
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-content">
+            <div className="nav-brand">
+              <h1 className="brand-title">JobPortal</h1>
             </div>
-            <div className="flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-              <a href="#hiring" className="text-gray-700 hover:text-blue-600 transition-colors">Hiring</a>
-              <a href="#applying" className="text-gray-700 hover:text-blue-600 transition-colors">Applying</a>
-              <a href="#freelancing" className="text-gray-700 hover:text-blue-600 transition-colors">Freelancing</a>
+            <div className="nav-links">
+              <a href="#home" className="nav-link">Home</a>
+              <a href="#hiring" className="nav-link">Hiring</a>
+              <a href="#applying" className="nav-link">Applying</a>
+              <a href="#freelancing" className="nav-link">Freelancing</a>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-6">Connect Talent with Opportunity</h1>
-              <p className="text-xl mb-8 text-blue-100">
+      <section id="home" className="hero-section">
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-title">Connect Talent with Opportunity</h1>
+              <p className="hero-description">
                 The ultimate job portal connecting hirers, job seekers, and freelancers in one powerful platform.
                 Find your perfect match today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="hero-buttons">
                 <button 
                   onClick={() => openAuth('applicant', 'signup')}
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                  className="btn btn-primary"
                 >
                   Find Jobs
                 </button>
                 <button 
                   onClick={() => openAuth('hirer', 'signup')}
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+                  className="btn btn-secondary"
                 >
                   Post Jobs
                 </button>
               </div>
             </div>
-            <div className="lg:text-right">
+            <div className="hero-image">
               <img 
                 src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" 
                 alt="Professional team collaboration"
-                className="rounded-lg shadow-2xl w-full max-w-lg mx-auto"
+                className="hero-img"
               />
             </div>
           </div>
@@ -142,66 +142,66 @@ function App() {
       </section>
 
       {/* Hiring Section */}
-      <section id="hiring" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+      <section id="hiring" className="section section-white">
+        <div className="container">
+          <div className="section-content">
+            <div className="section-image">
               <img 
                 src="https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg" 
                 alt="Professional hiring process"
-                className="rounded-lg shadow-xl w-full"
+                className="feature-img"
               />
             </div>
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">For Hirers</h2>
-              <p className="text-lg text-gray-600 mb-8">
+            <div className="section-text">
+              <h2 className="section-title">For Hirers</h2>
+              <p className="section-description">
                 Streamline your recruitment process with our advanced hiring tools and access to top talent.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="features-list">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-blue">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Smart Candidate Matching</h3>
-                    <p className="text-gray-600">AI-powered matching to find the perfect candidates for your roles</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Smart Candidate Matching</h3>
+                    <p className="feature-desc">AI-powered matching to find the perfect candidates for your roles</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-blue">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Application Management</h3>
-                    <p className="text-gray-600">Organize and track all applications in one centralized dashboard</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Application Management</h3>
+                    <p className="feature-desc">Organize and track all applications in one centralized dashboard</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-blue">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Advanced Analytics</h3>
-                    <p className="text-gray-600">Detailed insights and reports on your hiring performance</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Advanced Analytics</h3>
+                    <p className="feature-desc">Detailed insights and reports on your hiring performance</p>
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="section-buttons">
                 <button 
                   onClick={() => openAuth('hirer', 'signup')}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  className="btn btn-blue"
                 >
                   Start Hiring
                 </button>
                 <button 
                   onClick={() => openAuth('hirer', 'signin')}
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                  className="btn btn-blue-outline"
                 >
                   Sign In
                 </button>
@@ -212,69 +212,69 @@ function App() {
       </section>
 
       {/* Job Applying Section */}
-      <section id="applying" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">For Job Seekers</h2>
-              <p className="text-lg text-gray-600 mb-8">
+      <section id="applying" className="section section-gray">
+        <div className="container">
+          <div className="section-content section-reverse">
+            <div className="section-text">
+              <h2 className="section-title">For Job Seekers</h2>
+              <p className="section-description">
                 Discover your dream job with our comprehensive job search and application platform.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="bg-green-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="features-list">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-green">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Personalized Job Recommendations</h3>
-                    <p className="text-gray-600">Get job suggestions tailored to your skills and preferences</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Personalized Job Recommendations</h3>
+                    <p className="feature-desc">Get job suggestions tailored to your skills and preferences</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-green-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-green">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">One-Click Applications</h3>
-                    <p className="text-gray-600">Apply to multiple jobs quickly with your saved profile</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">One-Click Applications</h3>
+                    <p className="feature-desc">Apply to multiple jobs quickly with your saved profile</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-green-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-green">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Application Tracking</h3>
-                    <p className="text-gray-600">Track the status of all your job applications in real-time</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Application Tracking</h3>
+                    <p className="feature-desc">Track the status of all your job applications in real-time</p>
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="section-buttons">
                 <button 
                   onClick={() => openAuth('applicant', 'signup')}
-                  className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                  className="btn btn-green"
                 >
                   Find Jobs
                 </button>
                 <button 
                   onClick={() => openAuth('applicant', 'signin')}
-                  className="border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                  className="btn btn-green-outline"
                 >
                   Sign In
                 </button>
               </div>
             </div>
-            <div>
+            <div className="section-image">
               <img 
                 src="https://images.pexels.com/photos/4226115/pexels-photo-4226115.jpeg" 
                 alt="Job application process"
-                className="rounded-lg shadow-xl w-full"
+                className="feature-img"
               />
             </div>
           </div>
@@ -282,66 +282,66 @@ function App() {
       </section>
 
       {/* Freelancing Section */}
-      <section id="freelancing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+      <section id="freelancing" className="section section-white">
+        <div className="container">
+          <div className="section-content">
+            <div className="section-image">
               <img 
                 src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" 
                 alt="Freelancer working remotely"
-                className="rounded-lg shadow-xl w-full"
+                className="feature-img"
               />
             </div>
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">For Freelancers</h2>
-              <p className="text-lg text-gray-600 mb-8">
+            <div className="section-text">
+              <h2 className="section-title">For Freelancers</h2>
+              <p className="section-description">
                 Build your freelance career with access to quality projects and clients worldwide.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="bg-purple-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="features-list">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-purple">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Project Marketplace</h3>
-                    <p className="text-gray-600">Browse and bid on projects that match your expertise</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Project Marketplace</h3>
+                    <p className="feature-desc">Browse and bid on projects that match your expertise</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-purple-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-purple">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Secure Payments</h3>
-                    <p className="text-gray-600">Get paid safely and on time with our escrow system</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Secure Payments</h3>
+                    <p className="feature-desc">Get paid safely and on time with our escrow system</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-purple-100 p-2 rounded-lg mr-4">
-                    <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="feature-item">
+                  <div className="feature-icon feature-icon-purple">
+                    <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Portfolio Showcase</h3>
-                    <p className="text-gray-600">Display your work and build your professional reputation</p>
+                  <div className="feature-text">
+                    <h3 className="feature-title">Portfolio Showcase</h3>
+                    <p className="feature-desc">Display your work and build your professional reputation</p>
                   </div>
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="section-buttons">
                 <button 
                   onClick={() => openAuth('freelancer', 'signup')}
-                  className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  className="btn btn-purple"
                 >
                   Start Freelancing
                 </button>
                 <button 
                   onClick={() => openAuth('freelancer', 'signin')}
-                  className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                  className="btn btn-purple-outline"
                 >
                   Sign In
                 </button>
@@ -352,19 +352,19 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">JobPortal</h3>
-            <p className="text-gray-400 mb-8">Connecting talent with opportunity worldwide</p>
-            <div className="flex justify-center space-x-8">
-              <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
-              <a href="#hiring" className="text-gray-400 hover:text-white transition-colors">Hiring</a>
-              <a href="#applying" className="text-gray-400 hover:text-white transition-colors">Applying</a>
-              <a href="#freelancing" className="text-gray-400 hover:text-white transition-colors">Freelancing</a>
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <h3 className="footer-title">JobPortal</h3>
+            <p className="footer-description">Connecting talent with opportunity worldwide</p>
+            <div className="footer-links">
+              <a href="#home" className="footer-link">Home</a>
+              <a href="#hiring" className="footer-link">Hiring</a>
+              <a href="#applying" className="footer-link">Applying</a>
+              <a href="#freelancing" className="footer-link">Freelancing</a>
             </div>
-            <div className="mt-8 pt-8 border-t border-gray-800">
-              <p className="text-gray-400">&copy; 2025 JobPortal. All rights reserved.</p>
+            <div className="footer-bottom">
+              <p className="footer-copyright">&copy; 2025 JobPortal. All rights reserved.</p>
             </div>
           </div>
         </div>
@@ -405,53 +405,53 @@ function AuthModal({ title, isSignUp, onClose, onSubmit }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+    <div className="modal-backdrop">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h2 className="modal-title">{title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 text-2xl"
+            className="modal-close"
           >
             ×
           </button>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="modal-form">
           {isSignUp && (
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <div className="form-group">
+              <label className="form-label">Name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="form-input"
                 required
               />
             </div>
           )}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <div className="form-group">
+            <label className="form-label">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input"
               required
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <div className="form-group">
+            <label className="form-label">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="form-input"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            className="btn btn-primary btn-full"
           >
             {isSignUp ? 'Sign Up' : 'Sign In'}
           </button>
@@ -467,87 +467,69 @@ function UserDashboard({ user, onLogout }) {
     switch (user.user_type) {
       case 'hirer':
         return (
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">Hirer Dashboard</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Post a Job</h4>
-                <p className="text-gray-600 mb-4">Create and publish job listings to attract top talent</p>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                  Post Job
-                </button>
+          <div className="dashboard-section dashboard-hirer">
+            <h3 className="dashboard-title">Hirer Dashboard</h3>
+            <div className="dashboard-grid">
+              <div className="dashboard-card">
+                <h4 className="card-title">Post a Job</h4>
+                <p className="card-description">Create and publish job listings to attract top talent</p>
+                <button className="btn btn-blue">Post Job</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Manage Applications</h4>
-                <p className="text-gray-600 mb-4">Review and manage candidate applications</p>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                  View Applications
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">Manage Applications</h4>
+                <p className="card-description">Review and manage candidate applications</p>
+                <button className="btn btn-blue">View Applications</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Analytics</h4>
-                <p className="text-gray-600 mb-4">Track your hiring performance and metrics</p>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                  View Analytics
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">Analytics</h4>
+                <p className="card-description">Track your hiring performance and metrics</p>
+                <button className="btn btn-blue">View Analytics</button>
               </div>
             </div>
           </div>
         );
       case 'applicant':
         return (
-          <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold text-green-900 mb-4">Job Seeker Dashboard</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Browse Jobs</h4>
-                <p className="text-gray-600 mb-4">Discover new job opportunities tailored for you</p>
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-                  Browse Jobs
-                </button>
+          <div className="dashboard-section dashboard-applicant">
+            <h3 className="dashboard-title">Job Seeker Dashboard</h3>
+            <div className="dashboard-grid">
+              <div className="dashboard-card">
+                <h4 className="card-title">Browse Jobs</h4>
+                <p className="card-description">Discover new job opportunities tailored for you</p>
+                <button className="btn btn-green">Browse Jobs</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">My Applications</h4>
-                <p className="text-gray-600 mb-4">Track the status of your job applications</p>
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-                  View Applications
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">My Applications</h4>
+                <p className="card-description">Track the status of your job applications</p>
+                <button className="btn btn-green">View Applications</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Profile</h4>
-                <p className="text-gray-600 mb-4">Update your resume and professional profile</p>
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-                  Edit Profile
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">Profile</h4>
+                <p className="card-description">Update your resume and professional profile</p>
+                <button className="btn btn-green">Edit Profile</button>
               </div>
             </div>
           </div>
         );
       case 'freelancer':
         return (
-          <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold text-purple-900 mb-4">Freelancer Dashboard</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Find Projects</h4>
-                <p className="text-gray-600 mb-4">Browse and bid on freelance projects</p>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
-                  Find Projects
-                </button>
+          <div className="dashboard-section dashboard-freelancer">
+            <h3 className="dashboard-title">Freelancer Dashboard</h3>
+            <div className="dashboard-grid">
+              <div className="dashboard-card">
+                <h4 className="card-title">Find Projects</h4>
+                <p className="card-description">Browse and bid on freelance projects</p>
+                <button className="btn btn-purple">Find Projects</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">My Proposals</h4>
-                <p className="text-gray-600 mb-4">Track your project proposals and bids</p>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
-                  View Proposals
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">My Proposals</h4>
+                <p className="card-description">Track your project proposals and bids</p>
+                <button className="btn btn-purple">View Proposals</button>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h4 className="font-semibold text-gray-900 mb-2">Portfolio</h4>
-                <p className="text-gray-600 mb-4">Showcase your work and build your reputation</p>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
-                  Manage Portfolio
-                </button>
+              <div className="dashboard-card">
+                <h4 className="card-title">Portfolio</h4>
+                <p className="card-description">Showcase your work and build your reputation</p>
+                <button className="btn btn-purple">Manage Portfolio</button>
               </div>
             </div>
           </div>
@@ -558,18 +540,18 @@ function UserDashboard({ user, onLogout }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-blue-600">JobPortal</h1>
+    <div id="dashboard">
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-content">
+            <div className="nav-brand">
+              <h1 className="brand-title">JobPortal</h1>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {user.name}!</span>
+            <div className="nav-user">
+              <span className="user-welcome">Welcome, {user.name}!</span>
               <button
                 onClick={onLogout}
-                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+                className="btn btn-danger"
               >
                 Logout
               </button>
@@ -578,8 +560,10 @@ function UserDashboard({ user, onLogout }) {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {getDashboardContent()}
+      <div className="dashboard-container">
+        <div className="container">
+          {getDashboardContent()}
+        </div>
       </div>
     </div>
   );
