@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 
 class JobPortalAPITest(unittest.TestCase):
-    def setUp(self):
+    def __init__(self):
         self.base_url = "https://6f68fbd5-ce75-4ac3-a0c7-a15d5e146200.preview.emergentagent.com"
         self.token = None
         # Generate random test data
