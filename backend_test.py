@@ -246,8 +246,12 @@ class JobPortalAPITest:
                 # Missing name and user_type
             }
         )
-        self.assertNotEqual(response.status_code, 200)
+        if response.status_code == 200:
+            print(f"❌ Invalid signup validation failed: Expected non-200 status code, got 200")
+            return False
+            
         print("✅ Invalid signup validation passed")
+        return True
 
     def test_09_invalid_signin(self):
         """Test invalid signin with wrong credentials"""
@@ -259,8 +263,12 @@ class JobPortalAPITest:
                 "password": "WrongPassword123!"
             }
         )
-        self.assertEqual(response.status_code, 401)
+        if response.status_code != 401:
+            print(f"❌ Invalid signin validation failed: Expected status code 401, got {response.status_code}")
+            return False
+            
         print("✅ Invalid signin validation passed")
+        return True
 
     def test_10_unauthorized_profile(self):
         """Test unauthorized profile access"""
@@ -269,8 +277,12 @@ class JobPortalAPITest:
             f"{self.base_url}/api/profile",
             headers={"Authorization": "Bearer invalid_token"}
         )
-        self.assertEqual(response.status_code, 401)
+        if response.status_code != 401:
+            print(f"❌ Unauthorized profile access validation failed: Expected status code 401, got {response.status_code}")
+            return False
+            
         print("✅ Unauthorized profile access validation passed")
+        return True
 
     def run_all_tests(self):
         """Run all tests in sequence"""
