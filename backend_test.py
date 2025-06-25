@@ -33,12 +33,25 @@ class JobPortalAPITest:
         """Test the health check endpoint"""
         print("\n🔍 Testing API health check...")
         response = requests.get(f"{self.base_url}/api/health")
-        self.assertEqual(response.status_code, 200)
+        if response.status_code != 200:
+            print(f"❌ API health check failed: Expected status code 200, got {response.status_code}")
+            return False
+        
         data = response.json()
-        self.assertEqual(data["status"], "healthy")
-        self.assertTrue("database" in data)
-        self.assertTrue("timestamp" in data)
+        if data["status"] != "healthy":
+            print(f"❌ API health check failed: Expected status 'healthy', got '{data['status']}'")
+            return False
+            
+        if "database" not in data:
+            print("❌ API health check failed: 'database' field missing from response")
+            return False
+            
+        if "timestamp" not in data:
+            print("❌ API health check failed: 'timestamp' field missing from response")
+            return False
+            
         print("✅ API health check passed")
+        return True
 
     def test_02_signup_applicant(self):
         """Test user registration for applicant"""
